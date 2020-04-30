@@ -1,0 +1,23 @@
+reserva = {'Marcos':2}
+print('Bem-Vindo ao Hotel Bom Descanso')
+
+verFal = True
+
+while verFal == True:
+  quarto = int(input('Qual o numero do quarto que deseja reservar? '))
+  if quarto in reserva.values():
+    print('Este quarto já esta reservado!')
+  else:
+    hospede = input("Digite o nome do hospede: ")
+    reserva[hospede] = quarto
+    a = input('Deseja Cadastrar mais algum hospede? S/N (S PARA SIM OU N PARA NAO): ')
+    if a == 'S':
+      verFal = True
+    elif a == 'N':
+      verFal = False
+    
+    
+if verFal == False:
+  print('#RELATORIOS DOS QUARTOS RESERVADOS#')
+  for hospede , quarto in reserva.items():
+    print(f'Quarto Nº {quarto} = {hospede}')
